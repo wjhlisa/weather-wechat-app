@@ -1,0 +1,39 @@
+<!--index.wxml-->
+<view>
+  <view class="current_city" hover-class="click_once" bind:tap='onChangeCity'>
+    {{cityWeatherData[0].qu}}
+    <image class='icon_down' src='/images/icon-down-green.png'></image>
+  </view>
+
+  <view class="city_list{{isChoosingCity ? ' city_list_show' : ' city_list_hide'}}">
+    <view wx:for="{{citiesToChoose}}" wx:key="code" catch:tap="onSelectCity" data-index="{{index}}" class="city_item" hover-class="click_once">
+      {{item.name}}
+    </view>
+  </view>
+
+  <view class="container scroll_view" scroll-y="true" scroll-with-animation="true">
+    <view class="feature">
+      <view wx:for="{{cityWeatherData}}" wx:key="date" wx:if="{{index >= todayIndex}}" class="{{index == todayIndex ? 'today' : 'day'}}" hover-class="{{index == todayIndex ? 'click_once' : ''}}" bind:tap="onShowDetailPage" data-index="{{index}}">
+        <view class="date">{{item.shortDate}}</view>
+        <view class="week">周{{item.week}}</view>
+        <image class="pic" src="{{item.picPath}}"></image>
+        <view class="desc">
+          <text>{{item.daySummary}}</text>
+          <text>{{item.dayWind}}</text>
+        </view>        
+
+        <view class="temperature">
+          <text>{{item.nightLowTemp}} ~ {{item.dayHighTemp}}°</text>
+        </view>
+        
+        <image wx:if="{{index == todayIndex}}" class='icon_go' src='/images/icon-go-black.png'></image>        
+         
+      </view>
+    </view>
+
+    <canvas canvas-id="canvas" class= 'canvas' hidden="{{isChoosingCity}}"></canvas>
+  </view>
+
+  <view class="mask" hidden="{{!isChoosingCity}}" bindtap='onTapMask'></view>
+
+</view>

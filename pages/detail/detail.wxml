@@ -1,0 +1,97 @@
+<!--detail.wxml-->
+<view>
+  <view class="current_city">
+    {{cityWeatherData[0].qu}}今日天气详情
+  </view>
+
+  <scroll-view class="container scroll_view" scroll-y="true" scroll-with-animation="true">
+    <view class="detail-today">
+      <view class="more date">
+        <text>今天是 {{cityWeatherData[todayIndex].date}}  周{{cityWeatherData[todayIndex].week}}</text>
+      </view>
+      <view class="day-night">
+        <view class="weather">
+          <text class="day-desc">白天</text>
+          <image class="pic" src="/images/sun.png"></image>
+          <view class="desc">
+            <text>最高 {{cityWeatherData[todayIndex].dayHighTemp}}°</text>
+            <text>{{cityWeatherData[todayIndex].dayWind}}</text>
+          </view>
+        </view>
+        <view class="weather split"></view>
+        <view class="weather">
+          <view class="desc" >
+            <text>最低 {{cityWeatherData[todayIndex].nightLowTemp}}°</text>
+            <text>{{cityWeatherData[todayIndex].nightWind}}</text>
+          </view>
+          <image class="pic" src="/images/moon.png"></image>
+          <text class="day-desc">夜间</text>
+        </view>
+      </view>
+      <view class="temperature">
+        <text>{{cityWeatherData[todayIndex].nightLowTemp}} ~ {{cityWeatherData[todayIndex].dayHighTemp}}°</text>
+      </view>
+      <view class="more">
+        <text>日出：{{cityWeatherData[todayIndex].sunRise}}</text>
+        <text>日落：{{cityWeatherData[todayIndex].sunSet}}</text>
+      </view>
+      <view class="more">
+        <text>空气质量指数：{{cityWeatherData[todayIndex].aqi}}</text>        
+      </view>
+    </view>
+    <view class="today-bottom"></view>
+    
+    <view class="card-list">
+      <view class="card life">
+        <view class="title">生活指数</view>
+        <view class="item" >
+          <view class="line">
+            <image class="pic" src="/images/chuanyi.png"></image>
+            <view class="name">穿衣：</view>
+            <view class="desc">{{cityWeatherData[todayIndex].chuanYi}}</view>
+          </view>
+        </view>
+        
+        <view class="item" >
+          <view class="line">
+            <image class="pic" src="/images/ganmao.png"></image>
+            <view class="name">感冒：</view>
+            <view class="desc">{{cityWeatherData[todayIndex].ganMao}}</view>
+          </view>
+        </view>
+
+        <view class="item" >
+          <view class="line">
+            <image class="pic" src="/images/wuran.png"></image>
+            <view class="name">空气质量：</view>
+            <view class="desc">{{cityWeatherData[todayIndex].wuRan}}</view>
+          </view>
+        </view>
+
+        <view class="item" >
+          <view class="line">
+            <image class="pic" src="/images/ziwaixian.png"></image>
+            <view class="name">紫外线：</view>
+            <view class="desc">{{cityWeatherData[todayIndex].ziWaiXian}}</view>
+          </view>
+        </view>
+
+        <view class="item" >
+          <view class="line">
+            <image class="pic" src="/images/xiche.png"></image>
+            <view class="name">洗车：</view>
+            <view class="desc">{{cityWeatherData[todayIndex].xiChe}}</view>
+          </view>
+        </view>
+
+        <view class="item" >
+          <view class="line">
+            <image class="pic" src="/images/yundong.png"></image>
+            <view class="name">运动：</view>
+            <view class="desc">{{cityWeatherData[todayIndex].yunDong}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>
