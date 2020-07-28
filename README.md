@@ -1,4 +1,4 @@
-# wechat-weather
+# weather-wechat-app
 A weather broadcast WeChat app with a temperature graph  
   
 WeChat mini programs are the mobile apps running on WeChat. It is a MVVM framework similar to Vue.  
