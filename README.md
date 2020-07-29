@@ -8,6 +8,3 @@ You need to download WeChat Dev Tools to edit and compile this project. It won't
 The comments in source code are in Chinese since most of the WeChat developers are Chinese.  
   
 ![image](https://github.com/wjhlisa/wechat-weather/blob/master/w_Trim.gif)  
-
-Scan this QR code in WeChat to have a look  
-![image](https://github.com/wjhlisa/wechat-weather/blob/master/tytq.jpg)
