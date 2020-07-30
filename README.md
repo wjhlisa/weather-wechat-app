@@ -7,4 +7,4 @@ You need to download WeChat Dev Tools to edit and compile this project. It won't
   
 The comments in source code are in Chinese since most of the WeChat developers are Chinese.  
   
-![image](https://github.com/wjhlisa/wechat-weather/blob/master/w_Trim.gif)  
+![image](https://github.com/wjhlisa/wechat-weather/blob/master/t.gif)  
